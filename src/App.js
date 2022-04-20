@@ -1,29 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react'
 
+class App extends Component {
 
-//Test initial commit to github repo
+componentDidMount = () => {
+  return fetch('https://f1-takes-vegas.herokuapp.com/api/v1/constructors')
+  .then(response => response.json())
+  .then(data => console.log(data.constructors[0].name))
+}
 
-
-function App() {
+  render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="App">
+      <div className='title'> F1 takes Vegas!!!</div>
+    </main>
   );
+  }
 }
 
 export default App;
