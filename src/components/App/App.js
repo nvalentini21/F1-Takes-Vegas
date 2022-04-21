@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState, useEffect } from 'react'
 import getData from '../../apiCalls'
+import Nav from '../Nav/Nav'
 
 function App() {
   const [drivers, setDrivers] = useState([])
@@ -18,7 +19,7 @@ function App() {
 
   return (
     <main className='App'>
-      <h1>F1 TAKES VEGAS!!!</h1>
+      <Nav />
       { error && error }
     </main>
   )

@@ -1,0 +1,28 @@
+.navigation {
+	height: 10vw;
+	background-color: gray;
+	padding: 1em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.nav-buttons {
+	border-radius: 0.5em;
+	height: 8em;
+	width: 33em;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.title-div {
+	color: #f9f5f0;
+}
+
+.title {
+	font-size: 30px;
+}
+h4 {
+	font-size: 15px;
+}
