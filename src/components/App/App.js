@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react'
-import getData from '../apiCalls'
+import getData from '../../apiCalls'
 
 function App() {
   const [drivers, setDrivers] = useState([])
