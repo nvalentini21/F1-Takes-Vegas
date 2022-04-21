@@ -6,7 +6,7 @@ const Nav = () => {
 	return (
 		<nav className='navigation'>
 			<div className='title-div'>
-				<h1 className='title'>F1 Takes Vegas!!</h1>
+				<h1 className='title'>🏎F1 Takes Vegas🍾</h1>
 				<h4>Your beginners guide to F1</h4>
 			</div>
 			<div className='nav-buttons'>
