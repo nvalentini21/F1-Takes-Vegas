@@ -1,22 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
+import getData from './apiCalls'
 
-class App extends Component {
+function App() {
+  const [drivers, setDrivers] = useState([])
+  const [constructors, setConstructors] = useState([])
+  const[error, setError] = useState('')
 
-componentDidMount = () => {
-  return fetch('https://f1-takes-vegas.herokuapp.com/api/v1/constructors')
-  .then(response => response.json())
-  .then(data => console.log(data.constructors[0].name))
-}
+  useEffect(() => {
+    getData('constructors')
+    .then(data => setConstructors(data.constructors))
+    .catch(error => setError(error.message))
+    getData('drivers')
+    .then(data => setDrivers(data.drivers))
+    .catch(error => setError(error.message))
+  }, [])
 
-  render(){
   return (
-    <main className="App">
-      <div className='title'> F1 takes Vegas!!!</div>
-    </main>
-  );
-  }
+    <div className='App'>
+      <h1>F1 TAKES VEGAS!!!</h1>
+      { error && error }
+    </div>
+  )
 }
-
-export default App;
+export default App
