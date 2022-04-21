@@ -11,19 +11,19 @@ const Nav = () => {
 			</div>
 			<div className='nav-buttons'>
 				<NavLink to='/'>
-					<p className='home-link'>Home</p>
+					<p className='nav-button home-link'>Home</p>
 				</NavLink>
 				<NavLink to='/dashboard'>
-					<p className='dashboard-link'>Dashboard</p>
+					<p className='nav-button dashboard-link'>Dashboard</p>
 				</NavLink>
 				<NavLink to='/allDrivers'>
-					<p className='drivers-link'>Drivers</p>
+					<p className='nav-button drivers-link'>Drivers</p>
 				</NavLink>
 				<NavLink to='/allConstructors'>
-					<p className='constructors-link'>Constructors</p>
+					<p className='nav-button constructors-link'>Constructors</p>
 				</NavLink>
         <NavLink to='/fun'>
-          <p className='fun-link'>Fun</p>
+          <p className='nav-button fun-link'>Fun</p>
         </NavLink>
 			</div>
 		</nav>
