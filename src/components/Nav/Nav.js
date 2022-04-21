@@ -1,12 +1,12 @@
 import React from 'react'
 import './Nav.css'
-import { Route, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Nav = () => {
 	return (
 		<nav className='navigation'>
 			<div className='title-div'>
-				<h1 className='title'>🏎F1 Takes Vegas🍾</h1>
+				<h1 className='title'>F1 Takes Vegas</h1>
 				<h4>Your beginners guide to F1</h4>
 			</div>
 			<div className='nav-buttons'>
