@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react'
-import getData from './apiCalls'
+import getData from '../apiCalls'
 
 function App() {
   const [drivers, setDrivers] = useState([])
@@ -18,10 +17,10 @@ function App() {
   }, [])
 
   return (
-    <div className='App'>
+    <main className='App'>
       <h1>F1 TAKES VEGAS!!!</h1>
       { error && error }
-    </div>
+    </main>
   )
 }
 export default App
