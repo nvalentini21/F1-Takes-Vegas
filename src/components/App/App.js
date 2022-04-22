@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 import getData from '../../apiCalls'
 import Nav from '../Nav/Nav'
 import DriversContainer from '../Cards/DriversContainer'
+import FullDashboard from '../FullDashboard/FullDashboard'
 
 const App = (event) => {
   const [drivers, setDrivers] = useState([])
@@ -50,7 +51,7 @@ const App = (event) => {
         render={() => <div> This is the home page </div>}
         />
         <Route path="/dashboard"
-          render={() => <DriversContainer allDrivers={favorites} updateFavorites={updateFavorites}/>}
+          render={() => <FullDashboard allDrivers={favorites} updateFavorites={updateFavorites}/>}
         />
         <Route path="/allDrivers"
           render={() => <DriversContainer allDrivers={ drivers } updateFavorites={updateFavorites}/>}
