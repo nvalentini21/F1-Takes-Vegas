@@ -8,7 +8,6 @@ import DriversContainer from '../Cards/DriversContainer'
 const App = (event) => {
   const [drivers, setDrivers] = useState([])
   const [constructors, setConstructors] = useState([])
-  const [hasFavorites, setHasFavorites] = useState(false)
   const [favorites, setFavorites] = useState([])
   const[error, setError] = useState('')
 
@@ -28,6 +27,20 @@ const App = (event) => {
     .catch(error => setError(error.message))
   }, [])
 
+  const updateFavorites = (event) => {
+    const updatedArray = drivers.map((driver) => {
+			if (parseInt(event.target.id) === driver.id && !driver.isFavorited) {
+				driver.isFavorited = true
+        setFavorites([...favorites, driver])
+			} else if (parseInt(event.target.id) === driver.id && driver.isFavorited) {
+				driver.isFavorited = false
+        const filteredFavorites = favorites.filter(favorite => favorite.id != driver.id)
+				setFavorites(filteredFavorites)
+			}
+			return driver
+		})
+  }
+
   return (
     <main className='App'>
       <Nav />
@@ -37,10 +50,10 @@ const App = (event) => {
         render={() => <div> This is the home page </div>}
         />
         <Route path="/dashboard"
-          render={() => <div>This is the user dashboard page</div>}
+          render={() => <DriversContainer allDrivers={favorites} updateFavorites={updateFavorites}/>}
         />
         <Route path="/allDrivers"
-          render={() => <DriversContainer allDrivers={ drivers }/>}
+          render={() => <DriversContainer allDrivers={ drivers } updateFavorites={updateFavorites}/>}
         />
         <Route path="/allConstructors"
           render={() => <div>This is the allConstructors Page</div>}
