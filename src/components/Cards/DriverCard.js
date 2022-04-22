@@ -3,7 +3,7 @@ import './DriverCard.css'
 import blueHeart from '../../images/heartblue.png'
 import colorHeart from '../../images/heart-color.png'
 
-const DriverCard = ({driver}) => {
+const DriverCard = ({driver, changeIcon}) => {
   return (
     <div className='driver-card'>
       <div className='image-div'>
@@ -20,8 +20,8 @@ const DriverCard = ({driver}) => {
         <p className='driver-rank'> 2022 Rank: {driver.rank_2022}</p>
       </div>
       <div className='like-icon'>
-        <img src={blueHeart} alt="Driver photo" width="50px"/>
-        <img src={colorHeart} alt="Driver photo" width="50px"/>
+        {!driver.isFavorited && <img src={blueHeart} alt="Driver photo" width="55px" onClick={(event)=> console.log('EVENTT', event.target.id)}/>}
+        {driver.isFavorited && <img src={colorHeart} alt="Driver photo" width="50px" onClick={(event)=> console.log(event.target.id)}/>}
       </div>
     </div>
   )

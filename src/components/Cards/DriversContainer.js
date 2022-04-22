@@ -2,7 +2,7 @@ import React from 'react'
 import DriverCard from './DriverCard'
 import './CardContainer.css'
 
-const DriversContainer = ({allDrivers}) => {
+const DriversContainer = ({allDrivers}, event) => {
   const driverCards = allDrivers.map(driver => {
     return (
       <DriverCard driver={driver} id={driver.id} key= {driver.id} />
