@@ -11,7 +11,7 @@ const DriversContainer = ({allDrivers, updateFavorites}) => {
 
   return (
     <div>
-      {!allDrivers.length && <div>You currently do not have any favorites! Like your drivers to save them.</div>}
+      {!allDrivers.length && <div className='no-favorites-tag'>You currently do not have any favorites! Like your drivers to save them.</div>}
       {allDrivers && <div className ="card-container">{driverCards}</div>}
     </div>
   )

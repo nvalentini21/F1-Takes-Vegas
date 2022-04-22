@@ -20,8 +20,8 @@ const DriverCard = ({driver, updateFavorites}) => {
         <p className='driver-rank'> 2022 Rank: {driver.rank_2022}</p>
       </div>
       <div className='like-icon'>
-        {!driver.isFavorited && <img src={blueHeart} id={driver.id} alt="Driver photo" width="57px" onClick={(event)=> updateFavorites(event)}/>}
-        {driver.isFavorited && <img src={colorHeart} id={driver.id} alt="Driver photo" width="48px" onClick={(event)=> updateFavorites(event)}/>}
+        {!driver.isFavorited && <img src={blueHeart} className='like-icon' id={driver.id} alt="Driver photo" width="57px" onClick={(event)=> updateFavorites(event)}/>}
+        {driver.isFavorited && <img src={colorHeart} className='like-icon' id={driver.id} alt="Driver photo" width="48px" onClick={(event)=> updateFavorites(event)}/>}
       </div>
     </div>
   )
