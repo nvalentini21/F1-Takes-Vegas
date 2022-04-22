@@ -1,10 +1,18 @@
 import React from 'react'
-import Card from './DriverCard'
+import DriverCard from './DriverCard'
 import './CardContainer.css'
 
 const DriversContainer = ({allDrivers}) => {
+  const driverCards = allDrivers.map(driver => {
+    return (
+      <DriverCard driver={driver} id={driver.id} key= {driver.id} />
+    )
+  })
+
   return (
-    <div className ="card-container">{}</div>
+    <div className ="card-container">
+      {driverCards}
+    </div>
   )
 }
 

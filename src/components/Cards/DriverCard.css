@@ -1,0 +1,20 @@
+.driver-card {
+  display: flex;
+
+  background-color: white;
+  border: solid 1px red;
+  border-radius: 10px;
+  color: black;
+}
+
+.nationality-div{
+  display: flex;
+}
+
+img {
+  border-radius: 10px;
+}
+
+.like-icon {
+  align-self: flex-end;
+}
