@@ -1,6 +1,7 @@
 import React from 'react';
 import './DriverCard.css'
-import outlineHeart from '../../images/heart-outline.png'
+import blueHeart from '../../images/heartblue.png'
+import colorHeart from '../../images/heart-color.png'
 
 const DriverCard = ({driver}) => {
   return (
@@ -19,7 +20,8 @@ const DriverCard = ({driver}) => {
         <p className='driver-rank'> 2022 Rank: {driver.rank_2022}</p>
       </div>
       <div className='like-icon'>
-        <img src={outlineHeart} alt="Driver photo" width="45px"/>
+        <img src={blueHeart} alt="Driver photo" width="50px"/>
+        <img src={colorHeart} alt="Driver photo" width="50px"/>
       </div>
     </div>
   )

@@ -5,9 +5,11 @@ import getData from '../../apiCalls'
 import Nav from '../Nav/Nav'
 import DriversContainer from '../Cards/DriversContainer'
 
-const App = () => {
+const App = (event) => {
   const [drivers, setDrivers] = useState([])
   const [constructors, setConstructors] = useState([])
+  const [hasFavorites, setHasFavorites] = useState(false)
+  const [favorites, setFavorites] = useState([])
   const[error, setError] = useState('')
 
   useEffect(() => {
@@ -15,7 +17,14 @@ const App = () => {
     .then(data => setConstructors(data.constructors))
     .catch(error => setError(error.message))
     getData('drivers')
-    .then(data => setDrivers(data.drivers))
+    .then(data => {
+      const newArray = data.drivers.map(driver =>{
+        driver.isFavorited = false
+        driver.key = driver.id
+        return driver
+      })
+      setDrivers(newArray)
+    })
     .catch(error => setError(error.message))
   }, [])
 
