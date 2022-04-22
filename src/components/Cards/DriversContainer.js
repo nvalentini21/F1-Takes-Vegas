@@ -2,10 +2,10 @@ import React from 'react'
 import DriverCard from './DriverCard'
 import './CardContainer.css'
 
-const DriversContainer = ({allDrivers, updateFavorites}) => {
+const DriversContainer = ({allDrivers, updateFavoriteDriver}) => {
   const driverCards = allDrivers.map(driver => {
     return (
-      <DriverCard driver={driver} id={driver.id} key= {driver.id} updateFavorites={updateFavorites} />
+      <DriverCard driver={driver} id={driver.id} key= {driver.id} updateFavoriteDriver={updateFavoriteDriver} />
     )
   })
 

@@ -14,8 +14,18 @@ const App = (event) => {
 
   useEffect(() => {
     getData('constructors')
-    .then(data => setConstructors(data.constructors))
+    .then(data => {
+      const newArray = data.constructors.map(constructor =>{
+        constructor.isFavorited = false
+        constructor.key = constructor.id
+        return constructor
+      })
+      setConstructors(newArray)
+    })
     .catch(error => setError(error.message))
+  }, [])
+
+  useEffect(() => {
     getData('drivers')
     .then(data => {
       const newArray = data.drivers.map(driver =>{
@@ -28,7 +38,8 @@ const App = (event) => {
     .catch(error => setError(error.message))
   }, [])
 
-  const updateFavorites = (event) => {
+
+  const updateFavoriteDriver = (event) => {
     const updatedArray = drivers.map((driver) => {
 			if (parseInt(event.target.id) === driver.id && !driver.isFavorited) {
 				driver.isFavorited = true
@@ -51,10 +62,10 @@ const App = (event) => {
         render={() => <div> This is the home page </div>}
         />
         <Route path="/dashboard"
-          render={() => <FullDashboard allDrivers={favorites} updateFavorites={updateFavorites}/>}
+          render={() => <FullDashboard allDrivers={favorites} updateFavoriteDriver={updateFavoriteDriver}/>}
         />
         <Route path="/allDrivers"
-          render={() => <DriversContainer allDrivers={ drivers } updateFavorites={updateFavorites}/>}
+          render={() => <DriversContainer allDrivers={ drivers } updateFavoriteDriver={updateFavoriteDriver}/>}
         />
         <Route path="/allConstructors"
           render={() => <div>This is the allConstructors Page</div>}
