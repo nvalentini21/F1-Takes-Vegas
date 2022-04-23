@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 import getData from '../../apiCalls'
 import Nav from '../Nav/Nav'
 import DriversContainer from '../Cards/DriversContainer'
+import ConstructorContainer from '../Cards/ConstructorContainer'
 import FullDashboard from '../FullDashboard/FullDashboard'
 
 const App = (event) => {
@@ -84,7 +85,7 @@ const App = (event) => {
           render={() => <DriversContainer allDrivers={ drivers } updateFavoriteDriver={updateFavoriteDriver}/>}
         />
         <Route path="/allConstructors"
-          render={() => <div>This is the allConstructors Page</div>}
+          render={() => <ConstructorContainer allConstructors={ constructors } updateFavoriteTeam={updateFavoriteTeam}/>}
         />
         <Route path="/fun"
           render={() => <div>This is the fun page </div>}

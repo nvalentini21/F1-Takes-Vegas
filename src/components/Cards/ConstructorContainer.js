@@ -2,10 +2,10 @@ import React from 'react'
 import ConstructorCard from './ConstructorCard'
 import './CardContainer.css'
 
-const ConstructorContainer = ({allConstructors, updateFavorites}) => {
+const ConstructorContainer = ({allConstructors, updateFavoriteTeam}) => {
   const constructorCards = allConstructors.map(team => {
     return (
-      <ConstructorCard team={team} id={team.id} key= {team.id} updateFavorites={updateFavorites} />
+      <ConstructorCard team={team} id={team.id} key= {team.id} updateFavoriteTeam={updateFavoriteTeam} />
     )
   })
 
