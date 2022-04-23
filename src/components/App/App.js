@@ -10,6 +10,7 @@ const App = (event) => {
   const [drivers, setDrivers] = useState([])
   const [constructors, setConstructors] = useState([])
   const [favorites, setFavorites] = useState([])
+  const [favoriteTeam, setFavoriteTeam] = useState([])
   const[error, setError] = useState('')
 
   useEffect(() => {
@@ -52,6 +53,21 @@ const App = (event) => {
 			return driver
 		})
   }
+
+  const updateFavoriteTeam = (event) => {
+    const updatedArray = constructors.map((constructor) => {
+      if (parseInt(event.target.id) === constructor.id && !constructor.isFavorited) {
+        constructor.isFavorited = true
+        setFavoriteTeam([...favoriteTeam, constructor])
+      } else if (parseInt(event.target.id) === constructor.id && constructor.isFavorited) {
+        constructor.isFavorited = false
+        const filteredFavorites = favorites.filter(favorite => favorite.id != constructor.id)
+        setFavoriteTeam(filteredFavorites)
+      }
+      return constructor
+    })
+  }
+
 
   return (
     <main className='App'>
