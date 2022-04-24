@@ -1,14 +1,17 @@
 import React from 'react'
 import './FullDashboard.css'
 import DriversContainer from '../Cards/DriversContainer'
+import ConstructorContainer from '../Cards/ConstructorContainer'
 
-const FullDashboard = ({allDrivers, updateFavoriteDriver}) => {
+const FullDashboard = ({allDrivers, updateFavoriteDriver, allConstructors, updateFavoriteTeam}) => {
 	return (
     <div className='all-favorites'>
       <div className ='favorite-drivers'>Your Favorite Drivers:
       <DriversContainer allDrivers={allDrivers} updateFavoriteDriver={updateFavoriteDriver}/>
       </div>
-      <div className = 'favorite-constructors'> Fave teams go here</div>
+      <div className = 'favorite-constructors'>
+			<ConstructorContainer allConstructors={allConstructors} updateFavoriteTeam={updateFavoriteTeam} />
+			</div>
     </div>
 	)
 }

@@ -8,7 +8,6 @@ const ConstructorContainer = ({allConstructors, updateFavoriteTeam}) => {
       <ConstructorCard team={team} id={team.id} key= {team.id} updateFavoriteTeam={updateFavoriteTeam} />
     )
   })
-
   return (
     <div>
       {!allConstructors.length && <div className='no-favorites-tag'>You currently do not have any favorites! Like to save.</div>}

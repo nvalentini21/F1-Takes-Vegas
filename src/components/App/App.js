@@ -79,7 +79,7 @@ const App = (event) => {
         render={() => <div> This is the home page </div>}
         />
         <Route path="/dashboard"
-          render={() => <FullDashboard allDrivers={favorites} updateFavoriteDriver={updateFavoriteDriver}/>}
+          render={() => <FullDashboard allDrivers={favorites} allConstructors={favoriteTeam} updateFavoriteDriver={updateFavoriteDriver} updateFavoriteTeam={updateFavoriteTeam} />}
         />
         <Route path="/allDrivers"
           render={() => <DriversContainer allDrivers={ drivers } updateFavoriteDriver={updateFavoriteDriver}/>}
