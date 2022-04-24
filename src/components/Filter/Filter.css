@@ -1,0 +1,14 @@
+
+.intro-tag, .drink-driver {
+  font-size: 20px;
+}
+
+.drink-type{
+  font-size: 30px;
+  color: #E71872;
+}
+
+.drink-url{
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+  border: solid 2px #CF1C92;
+}

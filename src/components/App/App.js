@@ -6,6 +6,7 @@ import Nav from '../Nav/Nav'
 import DriversContainer from '../Cards/DriversContainer'
 import ConstructorContainer from '../Cards/ConstructorContainer'
 import FullDashboard from '../FullDashboard/FullDashboard'
+import Filter from '../Filter/Filter'
 
 const App = (event) => {
   const [drivers, setDrivers] = useState([])
@@ -82,13 +83,14 @@ const App = (event) => {
           render={() => <FullDashboard allDrivers={favorites} allConstructors={favoriteTeam} updateFavoriteDriver={updateFavoriteDriver} updateFavoriteTeam={updateFavoriteTeam} />}
         />
         <Route path="/allDrivers"
-          render={() => <DriversContainer allDrivers={ drivers } updateFavoriteDriver={updateFavoriteDriver}/>}
+          render={() => <DriversContainer allDrivers={ drivers } updateFavoriteDriver={updateFavoriteDriver}/>
+          }
         />
         <Route path="/allConstructors"
           render={() => <ConstructorContainer allConstructors={ constructors } updateFavoriteTeam={updateFavoriteTeam}/>}
         />
         <Route path="/fun"
-          render={() => <div>This is the fun page </div>}
+          render={() => <Filter />}
         />
       </Switch>
     </main>

@@ -10,7 +10,7 @@ const ConstructorContainer = ({allConstructors, updateFavoriteTeam}) => {
   })
   return (
     <div>
-      {!allConstructors.length && <div className='no-favorites-tag'>You currently do not have any favorites! Like to save.</div>}
+      {!allConstructors.length && <div className='no-favorites-tag'>You currently do not have any favorites.</div>}
       {allConstructors && <div className ="card-container">{constructorCards}</div>}
     </div>
   )
