@@ -11,7 +11,7 @@ const FullDashboard = ({allDrivers, updateFavoriteDriver, allConstructors, updat
       	<DriversContainer allDrivers={allDrivers} updateFavoriteDriver={updateFavoriteDriver}/>
       </div>
       <div className = 'favorite-constructors'>
-			<p className='title-favorites'> Your Favorite Constructors:</p>
+			<p className='title-favorites title-favorites-constructor'> Your Favorite Constructors:</p>
 				<ConstructorContainer allConstructors={allConstructors} updateFavoriteTeam={updateFavoriteTeam} />
 			</div>
     </div>

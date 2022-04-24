@@ -65,7 +65,7 @@ describe('F1 Takes Vegas constructors page', () => {
       .get('.team-rank').eq(0).contains('2022 Rank: 1')
       .get('.team-drivers').eq(0).contains('2022 Drivers: Charles Leclerc, Carlos Sainz')
     });
-  //
+    
     it('should be able to like and unlike a driver card', () => {
 		cy.get('.blue-heart').eq(0).should('be.visible').click()
     cy.get('.color-heart').eq(0).should('be.visible').click()
