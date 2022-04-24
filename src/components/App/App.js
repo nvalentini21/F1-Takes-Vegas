@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 import getData from '../../apiCalls'
 import Nav from '../Nav/Nav'
 import DriversContainer from '../Cards/DriversContainer'
+import ConstructorContainer from '../Cards/ConstructorContainer'
 import FullDashboard from '../FullDashboard/FullDashboard'
 
 const App = (event) => {
@@ -61,7 +62,7 @@ const App = (event) => {
         setFavoriteTeam([...favoriteTeam, constructor])
       } else if (parseInt(event.target.id) === constructor.id && constructor.isFavorited) {
         constructor.isFavorited = false
-        const filteredFavorites = favorites.filter(favorite => favorite.id != constructor.id)
+        const filteredFavorites = favoriteTeam.filter(favorite => favorite.id != constructor.id)
         setFavoriteTeam(filteredFavorites)
       }
       return constructor
@@ -78,13 +79,13 @@ const App = (event) => {
         render={() => <div> This is the home page </div>}
         />
         <Route path="/dashboard"
-          render={() => <FullDashboard allDrivers={favorites} updateFavoriteDriver={updateFavoriteDriver}/>}
+          render={() => <FullDashboard allDrivers={favorites} allConstructors={favoriteTeam} updateFavoriteDriver={updateFavoriteDriver} updateFavoriteTeam={updateFavoriteTeam} />}
         />
         <Route path="/allDrivers"
           render={() => <DriversContainer allDrivers={ drivers } updateFavoriteDriver={updateFavoriteDriver}/>}
         />
         <Route path="/allConstructors"
-          render={() => <div>This is the allConstructors Page</div>}
+          render={() => <ConstructorContainer allConstructors={ constructors } updateFavoriteTeam={updateFavoriteTeam}/>}
         />
         <Route path="/fun"
           render={() => <div>This is the fun page </div>}
