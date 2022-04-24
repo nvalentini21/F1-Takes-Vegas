@@ -20,6 +20,12 @@
 		both;
 }
 
+.title-favorites {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
 .title-emblem {
   align-items: center;
   justify-content:space-between;

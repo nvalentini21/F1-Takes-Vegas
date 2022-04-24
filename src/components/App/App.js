@@ -62,7 +62,7 @@ const App = (event) => {
         setFavoriteTeam([...favoriteTeam, constructor])
       } else if (parseInt(event.target.id) === constructor.id && constructor.isFavorited) {
         constructor.isFavorited = false
-        const filteredFavorites = favorites.filter(favorite => favorite.id != constructor.id)
+        const filteredFavorites = favoriteTeam.filter(favorite => favorite.id != constructor.id)
         setFavoriteTeam(filteredFavorites)
       }
       return constructor
