@@ -1,18 +1,31 @@
 import React, { useState, useEffect } from 'react'
 import './Filter.css'
+import getData from '../../apiCalls'
+
 
 const Filter = () => {
   const [input, setInput] = useState('')
   const [drinks, setDrinks] = useState([])
   const [driverDrink, setDriverDrink] = useState([])
+  const[error, setError] = useState('')
 
+  useEffect(() => {
+    getData('drinks')
+    .then(data => {
+      setDrinks(data.drinks)
+    })
+    .catch(error => setError(error.message))
+  }, [])
 
   const handleChange = (event) => {
     const value = event.target.value
     setInput(value)
-    console.log(value)
-
+    const driverDrink = drinks.find(drink => value === drink.name)
+    console.log(driverDrink)
+    setDriverDrink(driverDrink)
   }
+
+
   return(
     <div className='filter-bar'>
       <p className='intro-tag'>What drink is most like their drivers? Select a driver to find out!</p>
@@ -38,6 +51,11 @@ const Filter = () => {
       <option value="Guanyu Zhou">Guanyu Zhou</option>
       <option value="Sebastian Vettel">Sebastian Vettel</option>
       </select>
+      <div className="drink-info">
+        <p> {driverDrink.name} is a: </p>
+        <p>{driverDrink.drink_name}</p>
+        <img className='drink-url' src={driverDrink.drink_photo} alt="drink photo" height='300px'></img>
+      </div>
     </div>
   )
 }
