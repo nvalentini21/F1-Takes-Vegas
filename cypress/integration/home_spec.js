@@ -1,4 +1,4 @@
-describe('Fowl Prowl main-page', () => {
+describe('F1 Takes Vegas main page', () => {
 
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
