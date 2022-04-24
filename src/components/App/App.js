@@ -49,11 +49,12 @@ const App = (event) => {
         setFavorites([...favorites, driver])
 			} else if (parseInt(event.target.id) === driver.id && driver.isFavorited) {
 				driver.isFavorited = false
-        const filteredFavorites = favorites.filter(favorite => favorite.id != driver.id)
+        const filteredFavorites = favorites.filter(favorite => favorite.id !== driver.id)
 				setFavorites(filteredFavorites)
 			}
 			return driver
 		})
+    return updatedArray
   }
 
   const updateFavoriteTeam = (event) => {
@@ -63,11 +64,12 @@ const App = (event) => {
         setFavoriteTeam([...favoriteTeam, constructor])
       } else if (parseInt(event.target.id) === constructor.id && constructor.isFavorited) {
         constructor.isFavorited = false
-        const filteredFavorites = favoriteTeam.filter(favorite => favorite.id != constructor.id)
+        const filteredFavorites = favoriteTeam.filter(favorite => favorite.id !== constructor.id)
         setFavoriteTeam(filteredFavorites)
       }
       return constructor
     })
+    return updatedArray
   }
 
 

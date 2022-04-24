@@ -28,6 +28,7 @@ const Filter = () => {
 
   return(
     <div className='filter-bar'>
+      {error && <div>Unable to get information.</div>}
       <p className='intro-tag'>What drink is most like their drivers? Select a driver to find out!</p>
       <select className='select-bar' id="selectBar" onChange={event => handleChange(event)}>
       <option value=''>Chose your driver:</option>
@@ -54,7 +55,7 @@ const Filter = () => {
       {input ? <div className="drink-info">
         <p className= "drink-driver"> {driverDrink.name} is a: </p>
         <p className="drink-type">{driverDrink.drink_name}</p>
-        <img className='drink-url' src={driverDrink.drink_photo} alt="drink photo" height='300px'></img>
+        <img className='drink-url' src={driverDrink.drink_photo} alt="drink" height='300px'></img>
       </div> : <div>No driver chosen.</div> }
     </div>
   )

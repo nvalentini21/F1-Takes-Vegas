@@ -22,8 +22,8 @@ const ConstructorCard = ({team, id, updateFavoriteTeam}) => {
 
       </div>
       <div className='like-icon-con'>
-        {!team.isFavorited && <img src={blueHeart} className='like-icon-con blue-heart' id={team.id} alt="car photo" width="57px" onClick={(event)=> updateFavoriteTeam(event)}/>}
-        {team.isFavorited && <img src={colorHeart} className='like-icon-con color-heart' id={team.id} alt="car photo" width="48px" onClick={(event)=> updateFavoriteTeam(event)}/>}
+        {!team.isFavorited && <img src={blueHeart} className='like-icon-con blue-heart' id={team.id} alt="car" width="57px" onClick={(event)=> updateFavoriteTeam(event)}/>}
+        {team.isFavorited && <img src={colorHeart} className='like-icon-con color-heart' id={team.id} alt="car" width="48px" onClick={(event)=> updateFavoriteTeam(event)}/>}
       </div>
     </div>
   )
