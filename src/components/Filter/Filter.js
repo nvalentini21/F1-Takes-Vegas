@@ -30,7 +30,7 @@ const Filter = () => {
     <div className='filter-bar'>
       <p className='intro-tag'>What drink is most like their drivers? Select a driver to find out!</p>
       <select className='select-bar' id="selectBar" onChange={event => handleChange(event)}>
-      <option value="none">Chose your driver:</option>
+      <option value=''>Chose your driver:</option>
       <option value="Alexander Albon">Alexander Albon</option>
       <option value="Fernando Alonso">Fernando Alonso</option>
       <option value="Valtteri Botas">Valtteri Botas</option>
@@ -51,11 +51,11 @@ const Filter = () => {
       <option value="Guanyu Zhou">Guanyu Zhou</option>
       <option value="Sebastian Vettel">Sebastian Vettel</option>
       </select>
-      <div className="drink-info">
-        <p> {driverDrink.name} is a: </p>
-        <p>{driverDrink.drink_name}</p>
+      {input ? <div className="drink-info">
+        <p className= "drink-driver"> {driverDrink.name} is a: </p>
+        <p className="drink-type">{driverDrink.drink_name}</p>
         <img className='drink-url' src={driverDrink.drink_photo} alt="drink photo" height='300px'></img>
-      </div>
+      </div> : <div>Select a driver</div> }
     </div>
   )
 }
