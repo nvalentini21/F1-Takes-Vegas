@@ -55,7 +55,7 @@ const Filter = () => {
         <p className= "drink-driver"> {driverDrink.name} is a: </p>
         <p className="drink-type">{driverDrink.drink_name}</p>
         <img className='drink-url' src={driverDrink.drink_photo} alt="drink photo" height='300px'></img>
-      </div> : <div>Select a driver</div> }
+      </div> : <div>No driver chosen.</div> }
     </div>
   )
 }
