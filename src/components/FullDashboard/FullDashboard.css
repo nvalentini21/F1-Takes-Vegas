@@ -1,9 +1,9 @@
-.all-favorites{
+.all-favorites {
   display: flex;
   justify-content: center;
 }
 
-.favorite-constructors{
+.favorite-constructors {
   padding-left: 20px;
 }
 
