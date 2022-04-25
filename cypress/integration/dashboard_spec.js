@@ -64,25 +64,25 @@ describe('F1 Takes Vegas constructors page', () => {
     .visit('http://localhost:3000/dashboard')
     })
 
-  it('Should be able to visit the dashboard page and render a navgivation bar with the title and nav buttons', () => {
-    cy.contains('F1 Takes Vegas')
-      .get('.home-link')
-      .contains('Home')
-      .get('.dashboard-link')
-      .contains('Dashboard')
-      .get('.drivers-link')
-      .contains('Drivers')
-      .get('.constructors-link')
-      .contains('Constructors')
-      .get('.fun-link')
-      .contains('Fun')
-  });
+    it('Should be able to visit the dashboard page and render a navgivation bar with the title and nav buttons', () => {
+      cy.get('.nav-logo').should('be.visible')
+        .get('.home-link')
+        .contains('Home')
+        .get('.dashboard-link')
+        .contains('Dashboard')
+        .get('.drivers-link')
+        .contains('Drivers')
+        .get('.constructors-link')
+        .contains('Constructors')
+        .get('.fun-link')
+        .contains('Fun')
+    });
 
   it('Should be able to visit the dashboard page and tell the user if no favorite drivers of constructors are selected yet.', () => {
     cy.get('.title-favorites').contains('Your Favorite Drivers:')
-    cy.get('.title-favorites-constructor').contains('Your Favorite Constructors:')
-    cy.get('.no-favorites-tag').contains('You currently do not have any favorites.')
-    cy.get('.no-favorites-tag-driver').contains('You currently do not have any favorites.')
+      .get('.title-favorites-constructor').contains('Your Favorite Constructors:')
+      .get('.no-favorites-tag').contains('You currently do not have any favorites.')
+      .get('.no-favorites-tag-driver').contains('You currently do not have any favorites.')
   })
 
   it('Should be able to visit the drivers page, like a driver, and see that driver card with a colored icon on the dashboard', () => {

@@ -22,23 +22,22 @@ describe('F1 Takes Vegas fun page', () => {
     .visit('http://localhost:3000/fun')
     })
 
-  it('Should be able to visit the fun page and render a navgivation bar with the title and nav buttons', () => {
-    cy.contains('F1 Takes Vegas')
-      .get('.home-link')
-      .contains('Home')
-      .get('.dashboard-link')
-      .contains('Dashboard')
-      .get('.drivers-link')
-      .contains('Drivers')
-      .get('.constructors-link')
-      .contains('Constructors')
-      .get('.fun-link')
-      .contains('Fun')
-  });
+    it('Should be able to visit the fun page and render a navgivation bar with the title and nav buttons', () => {
+      cy.get('.nav-logo').should('be.visible')
+        .get('.home-link')
+        .contains('Home')
+        .get('.dashboard-link')
+        .contains('Dashboard')
+        .get('.drivers-link')
+        .contains('Drivers')
+        .get('.constructors-link')
+        .contains('Constructors')
+        .get('.fun-link')
+        .contains('Fun')
+    });
 
   it('Should be able to visit the fun page and see a search bar', () => {
-    cy.contains('F1 Takes Vegas')
-      .get('.intro-tag')
+    cy.get('.intro-tag')
       .contains('What drink is most like their drivers? Select a driver to find out!')
       .get('.select-bar').should('be.visible')
   });

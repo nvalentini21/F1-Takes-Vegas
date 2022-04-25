@@ -7,6 +7,7 @@ import DriversContainer from '../Cards/DriversContainer'
 import ConstructorContainer from '../Cards/ConstructorContainer'
 import FullDashboard from '../FullDashboard/FullDashboard'
 import Filter from '../Filter/Filter'
+import Welcome from '../Welcome/Welcome'
 
 const App = (event) => {
   const [drivers, setDrivers] = useState([])
@@ -79,7 +80,7 @@ const App = (event) => {
       { error && error }
       <Switch>
         <Route exact path="/"
-        render={() => <div> This is the home page </div>}
+        render={() => <Welcome />}
         />
         <Route path="/dashboard"
           render={() => <FullDashboard allDrivers={favorites} allConstructors={favoriteTeam} updateFavoriteDriver={updateFavoriteDriver} updateFavoriteTeam={updateFavoriteTeam} />}

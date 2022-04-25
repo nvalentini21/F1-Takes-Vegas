@@ -6,7 +6,7 @@ const Nav = () => {
 	return (
 		<nav className='navigation'>
 			<div className='title-div'>
-				<h1 className='title'>F1 Takes Vegas</h1>
+			<img className='nav-logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/2560px-F1.svg.png' alt='logo' width='200px'/>
 			</div>
 			<div className='nav-buttons'>
 				<NavLink to='/'>

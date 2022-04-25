@@ -25,7 +25,6 @@ const Filter = () => {
     setDriverDrink(driverDrink)
   }
 
-
   return(
     <div className='filter-bar'>
       {error && <div>Unable to get information.</div>}
