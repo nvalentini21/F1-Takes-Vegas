@@ -55,6 +55,7 @@ describe('F1 Takes Vegas constructors page', () => {
   it('Should be able to visit the constructors page and see each teams information', () => {
     cy.get('.card-container').eq(0).should('be.visible')
       .get('.constructor-card').eq(0).should('be.visible')
+      .get('.constructor-card').should('have.length', 2)
       .contains('Ferrari')
       .get('.full-name').eq(0).contains('Full Name: Scuderia Ferrari')
       .get('.team-base').eq(0).contains('Base: Maranello, Italy')
@@ -65,8 +66,8 @@ describe('F1 Takes Vegas constructors page', () => {
       .get('.team-drivers').eq(0).contains('2022 Drivers: Charles Leclerc, Carlos Sainz')
     });
 
-    it('should be able to like and unlike a driver card', () => {
-		cy.get('.blue-heart').eq(0).should('be.visible').click()
+  it('should be able to like and unlike a driver card', () => {
+		 cy.get('.blue-heart').eq(0).should('be.visible').click()
       .get('.color-heart').eq(0).should('be.visible').click()
       .get('.blue-heart').eq(0).should('be.visible').click()
 	})
