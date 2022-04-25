@@ -19,8 +19,6 @@ const ConstructorCard = ({team, id, updateFavoriteTeam}) => {
         <p className= 'world_championships'>World Championships: {team.world_championships}</p>
         <p className= 'team-rank'>2022 Rank: {team.rank}</p>
         <p className= 'team-drivers'>2022 Drivers: {team.driver1}, {team.driver2}</p>
-
-
       </div>
       <div className='like-icon-con'>
         {!team.isFavorited && <img src={blueHeart} className='like-icon-con blue-heart' id={team.id} alt="car" width="57px" onClick={(event)=> updateFavoriteTeam(event)}/>}

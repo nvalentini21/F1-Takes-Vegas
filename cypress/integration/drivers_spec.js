@@ -46,6 +46,7 @@ describe('F1 Takes Vegas driver page', () => {
 
   it('Should be able to visit the drivers page and see each drivers information', () => {
     cy.get('.card-container').eq(0).should('be.visible')
+      .get('.driver-card').should('have.length', 2)
       .get('.driver-card').eq(0).should('be.visible')
       .contains('Alexander Albon')
       .get('.driver-team').eq(0).contains('Team: Williams')
