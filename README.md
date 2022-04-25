@@ -43,15 +43,19 @@ Welcome Page: This main page features instructions for how to navigate the websi
 
 Drivers Page: This page features information about all of the 2022 drivers. As a user, you can choose to 'like' a driver by clicking the heart icon.
 
+<img width="1022" alt="Screen Shot 2022-04-24 at 7 40 13 PM" src="https://user-images.githubusercontent.com/92831895/165007480-d1f38195-1432-40e7-b8d3-cc1b3284ffb0.png">
+
 Constructors Page: This page features information about all of the 2022 constructors. As a user, you can choose to 'like' a constructor by clicking the heart icon.
+
+<img width="1142" alt="Screen Shot 2022-04-24 at 7 39 47 PM" src="https://user-images.githubusercontent.com/92831895/165007457-337304d4-41c7-4f59-80d0-7c161c6bedbd.png">
 
 Dashboard: This page allows users to view any drivers and or constructors that they saved. A user can also chose to 'unlike' a driver or constructor by clicking the red icon.
 
-[!Flow](https://media.giphy.com/media/zyPuyNYcYjUEP4aDsa/giphy.gif)
+<img width="965" alt="Screen Shot 2022-04-24 at 7 39 28 PM" src="https://user-images.githubusercontent.com/92831895/165007439-35cd3799-73fb-429f-870f-2028db58d880.png">
 
 Fun page: This page features a drink recommendation tailored to a specific driver! A user can select a driver in the dropdown, and see a drink appear.
 
-[!Fun Page](https://media.giphy.com/media/zyPuyNYcYjUEP4aDsa/giphy.gif)
+![Fun Page](https://media.giphy.com/media/zyPuyNYcYjUEP4aDsa/giphy.gif)
 
 ## Deployed Page
 
