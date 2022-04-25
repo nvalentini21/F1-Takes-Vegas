@@ -30,23 +30,22 @@ describe('F1 Takes Vegas driver page', () => {
     .visit('http://localhost:3000/allDrivers')
     })
 
-  it('Should be able to visit https://f1-takes-vegas.herokuapp.com/api/v1/drivers and render a navgivation bar with the title and nav buttons', () => {
-    cy.contains('F1 Takes Vegas')
-      .get('.home-link')
-      .contains('Home')
-      .get('.dashboard-link')
-      .contains('Dashboard')
-      .get('.drivers-link')
-      .contains('Drivers')
-      .get('.constructors-link')
-      .contains('Constructors')
-      .get('.fun-link')
-      .contains('Fun')
-  });
+    it('Should be able to visit the drivers page and render a navgivation bar with the title and nav buttons', () => {
+      cy.get('.nav-logo').should('be.visible')
+        .get('.home-link')
+        .contains('Home')
+        .get('.dashboard-link')
+        .contains('Dashboard')
+        .get('.drivers-link')
+        .contains('Drivers')
+        .get('.constructors-link')
+        .contains('Constructors')
+        .get('.fun-link')
+        .contains('Fun')
+    });
 
   it('Should be able to visit the drivers page and see each drivers information', () => {
-    cy.contains('F1 Takes Vegas')
-      .get('.card-container').eq(0).should('be.visible')
+    cy.get('.card-container').eq(0).should('be.visible')
       .get('.driver-card').eq(0).should('be.visible')
       .contains('Alexander Albon')
       .get('.driver-team').eq(0).contains('Team: Williams')
@@ -58,7 +57,7 @@ describe('F1 Takes Vegas driver page', () => {
 
     it('should be able to like and unlike a driver card', () => {
 		cy.get('.blue-heart').eq(0).should('be.visible').click()
-    cy.get('.color-heart').eq(0).should('be.visible').click()
-    cy.get('.blue-heart').eq(0).should('be.visible').click()
+      .get('.color-heart').eq(0).should('be.visible').click()
+      .get('.blue-heart').eq(0).should('be.visible').click()
 	})
 });

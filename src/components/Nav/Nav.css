@@ -5,9 +5,12 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-  /* background: linear-gradient(90deg, rgba(56,2,2,1) 0%, rgba(255,0,0,1) 48%, rgba(121,9,9,1) 78%); */
-background: linear-gradient(90deg, rgba(84,24,163,1) 0%, rgba(233,60,240,1) 46%, rgba(233,23,131,1) 100%);
-background: linear-gradient(90deg, rgba(50,28,179,1) 0%, rgba(178,35,184,1) 52%, rgba(233,23,112,1) 100%);
+	background: linear-gradient(90deg, rgba(50,28,179,1) 0%, rgba(178,35,184,1) 52%, rgba(233,23,112,1) 100%);
+}
+
+.title-div {
+	display:flex;
+	color: white;
 }
 
 .nav-buttons {

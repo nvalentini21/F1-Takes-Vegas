@@ -5,7 +5,7 @@ describe('F1 Takes Vegas main page', () => {
   })
 
   it('Should be able to visit http://localhost:3000 and render a navgivation bar with the title and nav buttons', () => {
-    cy.contains('F1 Takes Vegas')
+    cy.get('.nav-logo').should('be.visible')
       .get('.home-link')
       .contains('Home')
       .get('.dashboard-link')
@@ -17,6 +17,15 @@ describe('F1 Takes Vegas main page', () => {
       .get('.fun-link')
       .contains('Fun')
   });
+
+  it('Should be able to visit http://localhost:3000 and show a welcome message, instructions, and a vegas photo', () => {
+    cy.get('.title').contains('Welcome to F1 takes Vegas! Your 2022 quick guide to all teams and drivers.')
+      .get('.instructions').contains('Click the links above to view all F1 drivers and teams, like your favorites, and get some fun drink recommendations!')
+      .get('.vegas').should('be.visible')
+      .get('.question').contains('F1 Last Vegas Circuit: Coming November 2023. Are you ready?')
+
+  });
+
 
   it('Should be directed to the main page when user clicks the Home button', () => {
     cy.get('.home-link').click()
@@ -45,5 +54,10 @@ it('Should allow the user to use the back and forward buttons to go to a page in
     .location('pathname').should('include', '/allDrivers')
     .go('forward')
     .location('pathname').should('not.include', '/allDrivers')
+  })
+
+  it.only('Should give the user a message if they navigate to an incorrect URL', () => {
+    cy.visit('http://localhost:3000/123')
+      .get('.404').contains(`Sorry, the url/page you requested does not exist.`)
   })
 })

@@ -2,6 +2,7 @@ import React from 'react'
 import './FullDashboard.css'
 import DriversContainer from '../Cards/DriversContainer'
 import ConstructorContainer from '../Cards/ConstructorContainer'
+import PropTypes from 'prop-types'
 
 const FullDashboard = ({allDrivers, updateFavoriteDriver, allConstructors, updateFavoriteTeam}) => {
 	return (
@@ -16,5 +17,12 @@ const FullDashboard = ({allDrivers, updateFavoriteDriver, allConstructors, updat
 			</div>
     </div>
 	)
+}
+
+FullDashboard.propTypes = {
+  allDrivers: PropTypes.array,
+  updateFavoriteDriver: PropTypes.func,
+	allConstructors: PropTypes.array,
+	updateFavoriteTeam: PropTypes.func
 }
 export default FullDashboard

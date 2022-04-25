@@ -38,23 +38,22 @@ describe('F1 Takes Vegas constructors page', () => {
     .visit('http://localhost:3000/allConstructors')
     })
 
-  it('Should be able to visit the constructors page and render a navgivation bar with the title and nav buttons', () => {
-    cy.contains('F1 Takes Vegas')
-      .get('.home-link')
-      .contains('Home')
-      .get('.dashboard-link')
-      .contains('Dashboard')
-      .get('.drivers-link')
-      .contains('Drivers')
-      .get('.constructors-link')
-      .contains('Constructors')
-      .get('.fun-link')
-      .contains('Fun')
-  });
+    it('Should be able to visit the constructors page and render a navgivation bar with the title and nav buttons', () => {
+      cy.get('.nav-logo').should('be.visible')
+        .get('.home-link')
+        .contains('Home')
+        .get('.dashboard-link')
+        .contains('Dashboard')
+        .get('.drivers-link')
+        .contains('Drivers')
+        .get('.constructors-link')
+        .contains('Constructors')
+        .get('.fun-link')
+        .contains('Fun')
+    });
 
   it('Should be able to visit the constructors page and see each teams information', () => {
-    cy.contains('F1 Takes Vegas')
-      .get('.card-container').eq(0).should('be.visible')
+    cy.get('.card-container').eq(0).should('be.visible')
       .get('.constructor-card').eq(0).should('be.visible')
       .contains('Ferrari')
       .get('.full-name').eq(0).contains('Full Name: Scuderia Ferrari')
@@ -65,10 +64,10 @@ describe('F1 Takes Vegas constructors page', () => {
       .get('.team-rank').eq(0).contains('2022 Rank: 1')
       .get('.team-drivers').eq(0).contains('2022 Drivers: Charles Leclerc, Carlos Sainz')
     });
-    
+
     it('should be able to like and unlike a driver card', () => {
 		cy.get('.blue-heart').eq(0).should('be.visible').click()
-    cy.get('.color-heart').eq(0).should('be.visible').click()
-    cy.get('.blue-heart').eq(0).should('be.visible').click()
+      .get('.color-heart').eq(0).should('be.visible').click()
+      .get('.blue-heart').eq(0).should('be.visible').click()
 	})
 });
