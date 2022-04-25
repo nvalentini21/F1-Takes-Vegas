@@ -6,3 +6,11 @@
 .favorite-constructors{
   padding-left: 20px;
 }
+
+@media screen and (max-width: 930px) {
+  .all-favorites{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

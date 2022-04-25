@@ -1,5 +1,6 @@
 .navigation {
-	height: 7vw;
+	height: 80px;
+	width: 100vw;
 	background-color: gray;
 	padding: 1em;
 	display: flex;
@@ -29,6 +30,19 @@
 .title {
 	font-size: 30px;
 }
+
 h4 {
 	font-size: 15px;
+}
+
+@media screen and (max-width: 607px){
+	.navigation {
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 549px){
+	.nav-buttons {
+		width: 22em;
+	}
 }
