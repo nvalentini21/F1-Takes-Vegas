@@ -95,6 +95,9 @@ const App = (event) => {
         <Route path="/fun"
           render={() => <Filter />}
         />
+        <Route
+          render={() => <div className='404'>Sorry, the url/page you requested does not exist.</div>}
+        />
       </Switch>
     </main>
   )

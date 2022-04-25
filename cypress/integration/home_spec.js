@@ -55,4 +55,9 @@ it('Should allow the user to use the back and forward buttons to go to a page in
     .go('forward')
     .location('pathname').should('not.include', '/allDrivers')
   })
+
+  it.only('Should give the user a message if they navigate to an incorrect URL', () => {
+    cy.visit('http://localhost:3000/123')
+      .get('.404').contains(`Sorry, the url/page you requested does not exist.`)
+  })
 })
