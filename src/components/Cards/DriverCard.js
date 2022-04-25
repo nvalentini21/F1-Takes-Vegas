@@ -2,6 +2,7 @@ import React from 'react';
 import './DriverCard.css'
 import blueHeart from '../../images/heartblue.png'
 import colorHeart from '../../images/heart-color.png'
+import PropTypes from 'prop-types'
 
 const DriverCard = ({driver, updateFavoriteDriver}) => {
   return (
@@ -25,6 +26,11 @@ const DriverCard = ({driver, updateFavoriteDriver}) => {
       </div>
     </div>
   )
+}
+
+DriverCard.propTypes = {
+  driver: PropTypes.bool,
+  updateFavoriteDriver: PropTypes.func
 }
 
 export default DriverCard

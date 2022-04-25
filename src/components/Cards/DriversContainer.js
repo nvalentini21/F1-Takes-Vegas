@@ -1,6 +1,7 @@
 import React from 'react'
 import DriverCard from './DriverCard'
 import './CardContainer.css'
+import PropTypes from 'prop-types'
 
 const DriversContainer = ({allDrivers, updateFavoriteDriver}) => {
   const driverCards = allDrivers.map(driver => {
@@ -15,6 +16,11 @@ const DriversContainer = ({allDrivers, updateFavoriteDriver}) => {
       {allDrivers && <div className ="card-container">{driverCards}</div>}
     </div>
   )
+}
+
+DriversContainer.propTypes = {
+  allDrivers: PropTypes.array,
+  updateFavoriteDriver: PropTypes.func
 }
 
 export default DriversContainer

@@ -2,6 +2,7 @@ import React from 'react';
 import './ConstructorCard.css'
 import blueHeart from '../../images/heartblue.png'
 import colorHeart from '../../images/heart-color.png'
+import PropTypes from 'prop-types'
 
 const ConstructorCard = ({team, id, updateFavoriteTeam}) => {
   return (
@@ -27,6 +28,12 @@ const ConstructorCard = ({team, id, updateFavoriteTeam}) => {
       </div>
     </div>
   )
+}
+
+ConstructorCard.propTypes = {
+  team: PropTypes.object,
+  id: PropTypes.number,
+  updateFavoriteTeam: PropTypes.func
 }
 
 export default ConstructorCard
